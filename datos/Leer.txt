@@ -1,0 +1,10 @@
+* Importar la base de datos:
+
+1. Base de datos de arbovirosis
+
+i) Descomprimir el archivo en la carpeta "...\proyecto_dengue_covid\datos"
+ii) Guardar con nombre "base_dengue" en formato xlsx con nombre de hoja "Hoja1"
+
+2. Base COVID-19 con duplicados
+
+i) Por ahora, Johar es el encargado de trabajar esa data hasta obtener el archivo con nombre "base_duplicados.dta" en el cual están todas las pruebas PCR (hasta tres pruebas), AG (en NOTI y en SISCOVID) con sus repsectivas fechas de resultado e inicio de resultado
