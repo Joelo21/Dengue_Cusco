@@ -1,15 +1,15 @@
 
-import excel "datos\raw\BASE DE DATOS DENGUE 2020.xlsx", sheet("2020") firstrow clear
+import excel "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\raw\BASE DE DATOS DENGUE 2020.xlsx", sheet("2020") firstrow clear
 
 drop if N == .
 
-save "datos\base_laboratorio_2020", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_laboratorio_2020", replace
 
-import excel "datos\raw\BASE DE DATOS DENGUE 2021.xlsx", sheet("2021") firstrow clear
+import excel "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\raw\BASE DE DATOS DENGUE 2021.xlsx", sheet("2021") firstrow clear
 
 drop if N == .
 
-save "datos\base_laboratorio_2021", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_laboratorio_2021", replace
 
 append using "datos\base_laboratorio_2020", force 
 

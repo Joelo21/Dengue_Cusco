@@ -1,4 +1,4 @@
-use "datos\base_covid_dengue.dta", clear
+use "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_covid_dengue.dta", clear
 
 ********************************************************************************
 * 1. Criterio para el COVID-19 por ambas bases de datos
@@ -11,7 +11,7 @@ keep dni fecha_pcr1 fecha_pcr2 fecha_pcr3 fecha_ag_noti fecha_ag_sis fresultado1
 
 * Colocar 1s cuando sea pertinente
 
-save "datos\base_covid_dengue_criterio_uno.dta", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_covid_dengue_criterio_uno.dta", replace
 
 
 

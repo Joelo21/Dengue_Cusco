@@ -13,7 +13,7 @@
 
 * Importar la base de datos del NOTI
 
-import excel "D:\covid_cusco\datos\raw\base_noti.xlsx", sheet(BD_coronavirus) firstrow clear
+import excel "G:\Mi unidad\Datos_Dengue\datos\raw\base_noti.xlsx", sheet(BD_coronavirus) firstrow clear
 
 keep dni telefono tipodoc departamento_residencia prueba prueba1 prueba2 resultado resultado1 resultado2 resultado_rap resultado_rap1 muestra muestra1 muestra2 fecha_res fecha_res1 fecha_res2 fecha_res_rap fecha_res_rap1 fecha_ini
 
@@ -116,14 +116,14 @@ duplicates drop dni, force
 keep dni positivo_pcr1 positivo_pcr2 positivo_pcr3 positivo_pr1_noti positivo_pr2_noti positivo_ag_noti fecha_pcr1 fecha_pcr2 fecha_pcr3 fecha_pr1_noti fecha_pr2_noti fecha_ag_noti fecha_inicio_noti
 
 * Guardar la base de datos NOTI
-save "datos\data_noti"
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\data_noti"
 
 ********************************************************************************
 * 2. Pruebas Antigénica
 ********************************************************************************
 
 * Cargar la base de datos del SISCOVID
-import excel "D:\covid_cusco\datos\raw\base_sis_ag.xlsx", sheet("Hoja1") firstrow clear
+import excel "G:\Mi unidad\Datos_Dengue\datos\raw\base_sis_ag.xlsx", sheet("Hoja1") firstrow clear
 
 * Mantener sólo los de Cusco
 keep if Departamento == "Cusco"
@@ -163,7 +163,7 @@ quietly by dni: gen dup_sis = cond(_N==1,0,_n)
 
 keep dni positivo_ag_sis fecha_ag_sis repe_ag repeti_ag fecha_inicio_ag
 
-save "datos\data_sis_ag"
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\data_sis_ag"
 
 ********************************************************************************
 * 3. Pruebas Rápida
@@ -208,7 +208,7 @@ gen fecha_inicio = fecha_inicio_pr
 format fecha_inicio %td
 
 * Unir con la base de datos (con las mismas variables) del 2020
-append using "D:\covid_cusco\datos/output/base_sis_pr_2020.dta", force
+append using "G:\Mi unidad\Datos_Dengue\datos\output\base_sis_pr_2020.dta", force
 
 gen dni = nro_docume
 sort dni
@@ -221,7 +221,7 @@ rename fecha_pr fecha_sis_pr
 
 keep dni positivo_sis_pr fecha_sis_pr
 
-save "datos\data_sis_pr", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\data_sis_pr", replace
 
 *-------------------------------------------------------------------------------
 
@@ -245,7 +245,7 @@ keep if positivo_pcr1 == 1 | positivo_pcr2 == 1 | positivo_pcr3 == 1 | positivo_
 keep dni positivo_pcr1 positivo_pcr2 positivo_pcr3 positivo_ag_sis positivo_ag_noti fecha_pcr1 fecha_pcr2 fecha_pcr3 fecha_ag_sis fecha_ag_noti positivo_sis_pr fecha_sis_pr
 
 * Guardar la base de datos 
-save "datos\base_covid_positivos.dta", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_covid_positivos.dta", replace
 
 
 *-------------------------------------------------------------------------------
@@ -266,4 +266,4 @@ keep dni positivo_pcr1 positivo_pcr2 positivo_pcr3 positivo_ag_sis positivo_ag_n
 
 gen criterio_positivo_pcr_ag = 1
 * Guardar la base de datos 
-save "datos\base_covid_positivos_pcr_ag.dta", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_covid_positivos_pcr_ag.dta", replace

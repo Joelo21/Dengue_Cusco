@@ -5,7 +5,7 @@ global user 1
 * Definir los globales 
 
 if $user == 1 {
- global path "C:\Users\PC\Dropbox\Mi PC (DESKTOP-72MA2AK)\Documents\Dengue_Cusco"
+ global path "C:\Users\PC\Documents\GitHub\Dengue_Cusco"
 }
 
 if $user == 2 {

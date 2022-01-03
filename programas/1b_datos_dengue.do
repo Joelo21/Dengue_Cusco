@@ -7,7 +7,7 @@
 
 *-------------------------------------------------------------------------------%
 
-import excel "datos\base_dengue.xlsx", clear firstrow 
+import excel "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_dengue.xlsx", clear firstrow 
 
 * Duplicados
 duplicates report dni
@@ -110,7 +110,7 @@ replace negativos = 1 if result01 == "N" | result03  =="N" | result04 == "N" | r
 
 * Guardar 
 
-save "datos\base_dengue", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_dengue", replace
 
 
 * mantener los positivos
@@ -123,4 +123,4 @@ keep if positivos == 1
 keep dni prueba* fresultado* 
 
 * Guardar la base de datos
-save "datos\base_dengue_positivos", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_dengue_positivos", replace

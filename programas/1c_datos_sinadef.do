@@ -1,4 +1,4 @@
-import excel "datos\base_sinadef_total.xlsx", sheet("Data1") firstrow clear
+import excel "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_sinadef_total.xlsx", sheet("Data1") firstrow clear
 
 keep if DEPARTAMENTO == "CUSCO"
 
@@ -37,4 +37,4 @@ duplicates drop dni, force
 
 *keep dni sexo edad distrito fecha_sinadef
 
-save "datos\base_sinadef", replace
+save "C:\Users\PC\Documents\GitHub\Dengue_Cusco\datos\base_sinadef", replace
